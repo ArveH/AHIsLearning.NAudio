@@ -9,37 +9,41 @@ namespace BlazorServerApp.Components
 {
     public class OutputDevicesBase : ComponentBase
     {
-        protected List<MMDevice> _loopbackDevices;
-        protected bool _show;
+        protected List<MMDevice> LoopbackDevices;
+        protected bool Show;
+        protected string CurrentDeviceName;
+
+        private MMDevice _currentDevice;
+
 
         [Parameter]
-        public string CurrentDeviceName { get; set; }
+        public EventCallback<MMDevice> OnChangedDevice { get; set; }
 
-        [Parameter]
-        public MMDevice CurrentDevice { get; set; }
-
-        protected override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
             try
             {
                 var deviceEnum = new MMDeviceEnumerator();
-                _loopbackDevices = deviceEnum.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active).ToList();
-                CurrentDeviceName = _loopbackDevices.FirstOrDefault()?.FriendlyName;
+                LoopbackDevices = deviceEnum.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active).ToList();
+                var device = LoopbackDevices.FirstOrDefault();
+                CurrentDeviceName = device?.FriendlyName;
+                await OnSelect(device);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                _loopbackDevices = new List<MMDevice>();
+                LoopbackDevices = new List<MMDevice>();
             }
-
-            return Task.CompletedTask;
         }
 
-        protected void OnSelect(MMDevice device)
+        protected async Task OnSelect(MMDevice device)
         {
+            _currentDevice = device;
             CurrentDeviceName = device.FriendlyName;
-            CurrentDevice = device;
-            _show = false;
+
+            Show = false;
+
+            await OnChangedDevice.InvokeAsync(_currentDevice);
         }
     }
 }

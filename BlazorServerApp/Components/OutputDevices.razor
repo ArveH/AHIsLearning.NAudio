@@ -3,11 +3,11 @@
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="devicesMenuButton" 
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            @onclick="e => _show = !_show">
+            @onclick="e => Show = !Show">
         @CurrentDeviceName
     </button>
-    <div class="dropdown-menu @(_show? "show":"")" aria-labelledby="devicesMenuButton">
-        @foreach (var device in _loopbackDevices)
+    <div class="dropdown-menu @(Show? "show":"")" aria-labelledby="devicesMenuButton">
+        @foreach (var device in LoopbackDevices)
         {
         <button class="dropdown-item" @onclick="e => OnSelect(device)">
             @device.FriendlyName

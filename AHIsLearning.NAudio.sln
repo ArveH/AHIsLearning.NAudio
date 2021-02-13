@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHIsLearning.NAudio", "AHIsLearning.NAudio\AHIsLearning.NAudio.csproj", "{22F7BDAC-9D23-43EF-BD5B-08020B7A9D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerApp", "BlazorServerApp\BlazorServerApp.csproj", "{9022ACBF-B7A2-47E6-B931-621F2655E49B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{22F7BDAC-9D23-43EF-BD5B-08020B7A9D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22F7BDAC-9D23-43EF-BD5B-08020B7A9D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22F7BDAC-9D23-43EF-BD5B-08020B7A9D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22F7BDAC-9D23-43EF-BD5B-08020B7A9D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9022ACBF-B7A2-47E6-B931-621F2655E49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9022ACBF-B7A2-47E6-B931-621F2655E49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9022ACBF-B7A2-47E6-B931-621F2655E49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9022ACBF-B7A2-47E6-B931-621F2655E49B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

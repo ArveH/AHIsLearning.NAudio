@@ -1,6 +1,6 @@
 using System;
 
-namespace AHIsLearning.NAudio.Data
+namespace BlazorServerApp.Data
 {
     public class WeatherForecast
     {

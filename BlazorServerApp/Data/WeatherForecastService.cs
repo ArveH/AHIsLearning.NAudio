@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AHIsLearning.NAudio.Data
+namespace BlazorServerApp.Data
 {
     public class WeatherForecastService
     {

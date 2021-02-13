@@ -1,0 +1,10 @@
+﻿@page "/"
+@inherits IndexBase
+
+<div class="flex-column">
+    <OutputDevices CurrentDeviceName="@CurrentDeviceName"
+                   CurrentDevice="@CurrentDevice">
+    </OutputDevices>
+
+    <button class="btn btn-success mt-3" type="button" @onclick="Record">Record</button>
+</div>
